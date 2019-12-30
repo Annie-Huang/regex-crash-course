@@ -49,6 +49,7 @@ From hackerank-test
 // matches any string  that begins and ends with the same vowel. Recall that the English vowels are a, e, i, o, and u.
 // ^    means the beginning
 // $    means the end
+// .    The decimal point (.) matches any single character except the newline character, by default.
 // *    means 0+ characters
 // \1   The first arguement.
 const re = /^(a|e|i|o|u).*\1$/
