@@ -1,3 +1,5 @@
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
 let sentence = 'The dog chased the cat.';
 let regex = /the/;
 
