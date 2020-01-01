@@ -47,17 +47,26 @@ let chewieRegex1 = /a*/i;                              // My version
 console.log("'Aaaaaaaaaaaaaaarrrgh!' with /Aa*/ = ", chewieQuote.match(chewieRegex));
 console.log("'Aaaaaaaaaaaaaaarrrgh!' with /a*/i = ", chewieQuote.match(chewieRegex1));
 
+// #############################################################################
+// Greedy and lazy matches... * vs *?
+// A greedy match finds the longest possible part of the string that fits the regex pattern and returns it as a match
+// A lazy match finds the smallest possible part of the string and returns that regex patterns default to greedy
+
+// greedy match
+let string = 'titanic';
+let regex = /t[a-z]*i/; // t: start with t. [a-z]*: we want zero or more of any letter (a-z means a-z letter, * means 0 or more occurrence). i: ends with a i.
+console.log("'titanic' with /t[a-z]*i/ = ", string.match(regex));
+// lazy match
+// ?            Matches the preceding expression 0 or 1 time.
+let regex1 = /t[a-z]*?i/; // t: start with t. [a-z]*: we want zero or more of any letter (a-z means a-z letter, * means 0 or more occurrence, ? means 0 or 1 occurrence). i: ends with a i.
+console.log("'titanic' with /t[a-z]*?i/ = ", string.match(regex1));
 
 
-
-
-
-
-
-
-
-
-
+let text = '<h1>Winter is coming</h1>';
+let myRegex3 = /<.*>/;
+console.log("'<h1>Winter is coming</h1>' with /<.*>/ = ", text.match(myRegex3));
+let myRegex4 = /<.*?>/;
+console.log("'<h1>Winter is coming</h1>' with /<.*>/ = ", text.match(myRegex4));
 
 
 
