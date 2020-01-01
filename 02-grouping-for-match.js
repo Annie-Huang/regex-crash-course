@@ -19,6 +19,7 @@ let myRegex = /[2-6h-s]/ig;             // match some alphabets and some numbers
 console.log("'Blueberry 3.141592653s are delicious.' with /[2-6h-s]/ig", quoteSample2.match(myRegex));
 
 // #############################################################################
+// Match Single Characters Not Specified
 // [^xyz]       A negated or complemented character set. That is, it matches anything that is not enclosed in the brackets.
 //              You can specify a range of characters using a hyphen. Everything that works in the normal character set also works here.
 let quoteSample3 = '3 blind mice.';
@@ -26,12 +27,14 @@ let myRegex1 = /[^0-9aeiou]/ig;                     // Match everything except f
 console.log("'3 blind mice.' with /[^0-9aeiou]/ig = ", quoteSample3.match(myRegex1));
 
 // #############################################################################
+// Match Characters that Occur One or More Times
 // +            Matches the preceding expression 1 or more times.
 let difficultSpelling = 'Mississippi';
 let myRegex2 = /s+/g;                               // Match 's' One or More Times
 console.log("'Mississippi' with /s+/g = ", difficultSpelling.match(myRegex2));
 
 // #############################################################################
+// Match Characters that Occur Zero or More Times
 // *            Matches the preceding expression 0 or more times.
 let soccerWord = 'gooooooooal!';
 let gPhrase = 'gut feeling';
@@ -48,6 +51,7 @@ console.log("'Aaaaaaaaaaaaaaarrrgh!' with /Aa*/ = ", chewieQuote.match(chewieReg
 console.log("'Aaaaaaaaaaaaaaarrrgh!' with /a*/i = ", chewieQuote.match(chewieRegex1));
 
 // #############################################################################
+// Find Characters with Lazy Matching
 // Greedy and lazy matches... * vs *?
 // A greedy match finds the longest possible part of the string that fits the regex pattern and returns it as a match
 // A lazy match finds the smallest possible part of the string and returns that regex patterns default to greedy
