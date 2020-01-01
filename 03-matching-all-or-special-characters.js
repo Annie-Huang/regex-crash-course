@@ -69,6 +69,52 @@ let username = 'JackOfAllTrades';
 let userCheck = /^[A-Za-z]{2,}\d*$/i;       // Every letters will at least have two but go to infinite numbers of letters
 console.log("'JackOfAllTrades' with /^[A-Za-z]{2,}\\d*$/i", userCheck.test(username));
 
+// #############################################################################
+// Match Whitespace
+// \s           Matches a white space character, including space, tab, form feed, or line feed.
+let sample = 'WhiteSpace is important in separating words';
+let countWhiteSpace = /\s/g;
+console.log("'WhiteSpace is important in separating words' with /\\s/g = ", sample.match(countWhiteSpace));
+
+// #############################################################################
+// Match Non-Whitespace Characters
+// \S           Matches a character other than white space.
+let sample1 = 'WhiteSpace is important in separating words';
+let countWhiteSpace1 = /\S/g;
+console.log("'WhiteSpace is important in separating words' with /\\S/g = ", sample1.match(countWhiteSpace1));
+
+// #############################################################################
+// Specify Upper and Lower Number of Matches
+// Find anything that has 3-6 occurrence of 'h' in between 'Oh' and 'no' with
+let ohStr = 'Ohhh no';
+let ohRegex = /Oh{3,6} no/;
+console.log("'Ohhh no' with /Oh{3,6} no/", ohRegex.test(ohStr));
+
+// #############################################################################
+// Specify Only the Lower Number of Matches
+let haStr = 'Hazzzzah';
+let haRegex = /z{4,}/;
+console.log("'Hazzzzah' with /z{4,}/", haRegex.test(haStr));
+
+// #############################################################################
+let timStr = 'Timmmmber';
+let timRegex = /Tim{4}ber/;
+console.log("'Timmmmber' with /Tim{4}ber/", timRegex.test(timStr));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
