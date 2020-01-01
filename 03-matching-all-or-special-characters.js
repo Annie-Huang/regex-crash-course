@@ -42,11 +42,32 @@ let nonAlphabetRegex = /\W/g;
 // Only count ' ' and '.'
 console.log("'The five boxing wizards jump quickly.' with /\\W/g has the length of ", quoteSample1.match(nonAlphabetRegex).length); // 6
 
+// #############################################################################
+// Match All Numbers
+// \d       Matches a digit character. Equivalent to [0-9].
+let numString = 'Your sandwich will be $5.00';
+let numRegex = /\d/g;
+// [ '5', '0', '0' ]
+console.log("'Your sandwich will be $5.00' with /\\d/g has the length of ", numString.match(numRegex).length);
 
+// #############################################################################
+// Match All Non-Numbers
+// \D       	Matches a non-digit character.
+let numString1 = 'Your sandwich will be $5.00';
+let numRegex1 = /\D/g;
+// Everything except for [ '5', '0', '0' ]
+console.log("'Your sandwich will be $5.00' with /\\D/g has the length of ", numString1.match(numRegex1).length); // 24
 
-
-
-
+// #############################################################################
+// Restrict Possible Usernames
+// 1) If there are numbers, they must be at the end.
+// 2) Letters can be lowercase and uppercase.
+// 3) At least two characters long. Two-letter names can't have numbers
+// {n,m}        Matches at least "n" and at most "m" occurrences of the preceding expression,
+//              where "n" and "m" are positive integers and n <= m. When "m" is omitted, it's treated as ∞.
+let username = 'JackOfAllTrades';
+let userCheck = /^[A-Za-z]{2,}\d*$/i;       // Every letters will at least have two but go to infinite numbers of letters
+console.log("'JackOfAllTrades' with /^[A-Za-z]{2,}\\d*$/i", userCheck.test(username));
 
 
 
