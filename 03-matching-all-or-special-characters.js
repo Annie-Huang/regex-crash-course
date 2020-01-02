@@ -147,7 +147,17 @@ let reRegex = /^(\d+)\s\1\s\1$/; // Only want to find numbers that repeat exactl
 console.log("'42 42 42' with /(\\d+)\\s\\1\\s\\1/", reRegex.test(repeatNum));
 
 
+// #############################################################################
+// Use Capture Groups to Search and Replace
+// $1-$9                $1, $2, $3, $4, $5, $6, $7, $8, $9 properties are static and read-only properties of regular
+//                      expressions that contain parenthesized substring matches.
+let wrongText = 'The sky is silver';
+let silverRegex = /silver/;
+console.log("'The sky is silver' replace \/silver\/ with 'blue' = ", wrongText.replace(silverRegex, 'blue'));
 
+console.log("\"Code Camp\" replace /(\\w+)\\s(\\w+)/ with '$2 $1' = ", "Code Camp".replace(/(\w+)\s(\w+)/, '$2 $1'));
 
-
-
+let huhText = 'This sandwich is good.';
+let fixRegex = /good/;
+let replaceText = 'okey-dokey';
+console.log("'This sandwich is good.' replace \/good\/ with 'okey-dokey = '", huhText.replace(fixRegex, replaceText));
