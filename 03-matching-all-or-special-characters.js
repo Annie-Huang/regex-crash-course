@@ -97,17 +97,34 @@ let haRegex = /z{4,}/;
 console.log("'Hazzzzah' with /z{4,}/", haRegex.test(haStr));
 
 // #############################################################################
+// Specify Exact Number of Matches
 let timStr = 'Timmmmber';
 let timRegex = /Tim{4}ber/;
 console.log("'Timmmmber' with /Tim{4}ber/", timRegex.test(timStr));
 
+// #############################################################################
+// Check for All or None
+// favorite or favourite
+let favWord = 'favorite';
+let favRegex = /favou?rite/;    // 0 or 1 occurrence
+console.log("'favorite' with /favou?rite/", favRegex.test(favWord));
 
+// #############################################################################
+// Positive and Negative Lookahead
+// x(?=y)               Matches "x" only if "x" is followed by "y". This is called a lookahead.
+// x(?!y)               Matches "x" only if "x" is not followed by "y". This is called a negated lookahead.
+let quit = 'qu';
+let noquit = 'qt';
+let quRegex = /q(?=u)/;
+let qRegex = /q(?!u)/;
+console.log("'qu' with /q(?=u)/", quit.match(quRegex));
+console.log("'qt' with /q(?!u)/", noquit.match(qRegex));
 
-
-
-
-
-
+// Lookhead is usually used to check 2 or more pattern in a string.
+// password that is more than 5 characters long and have 2 consecutive digits
+let sampleWord = 'astronaut';
+let pwRegex = /(?=\w{5})(?=\D*\d{2})/;      // why \w{5} not meaning 5 words?? haha
+console.log("'astronaut' with /(?=\\w{5})(?=\\D*\\d{2})/", pwRegex.test(sampleWord));
 
 
 
