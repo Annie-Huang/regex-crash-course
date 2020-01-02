@@ -161,3 +161,9 @@ let huhText = 'This sandwich is good.';
 let fixRegex = /good/;
 let replaceText = 'okey-dokey';
 console.log("'This sandwich is good.' replace \/good\/ with 'okey-dokey = '", huhText.replace(fixRegex, replaceText));
+
+// #############################################################################
+// Remove Whitespace from Start and End
+let hello = '    Hello, World!    ';
+let wsRegex = /^\s+|\s+$/g;     // Remember to add the g, otherwise it find the first occurrence
+console.log("'    Hello, World!    ' replace /^\\s+|\\s+$/g with '' = --"+hello.replace(wsRegex, '')+"--");
