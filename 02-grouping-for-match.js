@@ -1,5 +1,9 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
 
+// #############################################################################
+// [xyz]        Character set. This pattern type matches any one of the characters in the brackets, including escape sequences.
+// x|y          Matches "x", or "y" (if there is no match for "x").
+
 let bgRegex = /b[aiu]g/;    // means start with b, then either a, i, u, then followed by g
 
 let quoteSample = 'Beware of bugs in the above code; I have only prove it correct';
@@ -20,7 +24,7 @@ console.log("'Blueberry 3.141592653s are delicious.' with /[2-6h-s]/ig", quoteSa
 
 // #############################################################################
 // Match Single Characters Not Specified
-// [^xyz]       A negated or complemented character set. That is, it matches anything that is not enclosed in the brackets.
+// [^xyz]       A negated or complemented character set. That is, it matches anything that is NOT enclosed in the brackets.
 //              You can specify a range of characters using a hyphen. Everything that works in the normal character set also works here.
 let quoteSample3 = '3 blind mice.';
 let myRegex1 = /[^0-9aeiou]/ig;                     // Match everything except for all numbers and all vowels
